@@ -1,0 +1,171 @@
+/*
+    Name: Woodsman
+    Description: Exclusive Coming Soon WordPress Theme
+    Version: 3.0
+    Author: MountainTheme
+
+    TABLE OF CONTENTS
+    ---------------------------
+     1. Loading
+     2. Mobile Menu
+     3. Blog
+     4. Wow
+     5. Nivo - Lightbox
+     6. Flex Slider
+     7. Scroll mouse
+     8. Flat Shadow
+
+*/
+
+jQuery.noConflict()(function($) {
+
+    'use strict';
+
+    var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iPhone: function() {
+            return navigator.userAgent.match(/iPhone/i);
+        },
+        iPad: function() {
+            return navigator.userAgent.match(/iPad/i);
+        },
+        iPod: function() {
+            return navigator.userAgent.match(/iPod/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+
+
+    /* ================================= */
+    /* :::::::::: 1. Loading ::::::::::: */
+    /* ================================= */
+
+    $(window).load(function() {
+
+        $(document).ready(function() {
+
+            mt_loading();
+            mt_mobile_menu();
+            mt_blogGrid();
+            mt_wow();
+            mt_nivoLightbox();
+            mt_flexslider();
+            mt_scroll_mouse();
+            mt_flat_shadow();
+
+        });
+    });
+
+    function mt_loading() {
+        $(".loader-icon").delay(500).fadeOut();
+        $(".page-loader").delay(700).fadeOut("slow");
+    }
+
+    /* ================================= */
+    /* ::::::: 2. Mobile Menu :::::::::: */
+    /* ================================= */
+
+    function mt_mobile_menu() {
+
+        $("#woodsman_menu").slicknav({
+            prependTo: 'header .col-md-12.menu',
+            allowParentLinks: true
+        });
+    }
+
+    /* ================================= */
+    /* ::::::::::: 3. Blog ::::::::::::: */
+    /* ================================= */
+
+    function mt_blogGrid() {
+
+        // Blog Grid
+        var element = $('.blogContainer');
+        element.imagesLoaded().done(function() {
+            element.isotope({
+                itemSelector: 'article',
+                masonry: {
+                    columnWidth: 'article',
+                    gutter: '.gutter-sizer'
+                },
+                percentPosition: true
+            });
+        });
+        $(window).on('resize', function() {
+            element.isotope();
+        }).trigger('resize');
+    }
+
+    /* ================================= */
+    /* :::::::::::: 4. Wow ::::::::::::: */
+    /* ================================= */
+
+    function mt_wow() {
+        new WOW().init();
+    }
+
+    /* ================================= */
+    /* ::::: 5. Nivo - Lightbox :::::::: */
+    /* ================================= */
+
+    function mt_nivoLightbox() {
+        $('.nivo-lbox').nivoLightbox({
+            effect: 'fade'
+        });
+    }
+
+    /* ================================= */
+    /* ::::::: 6. Flex Slider :::::::::: */
+    /* ================================= */
+
+    function mt_flexslider() {
+        $('.flexslider').flexslider({
+            controlNav: false,
+            prevText: '<i class="fa fa-angle-left"></i>',
+            nextText: '<i class="fa fa-angle-right"></i>',
+            slideshowSpeed: '3000',
+            pauseOnHover: true
+        });
+    }
+
+    /* ================================= */
+    /* ::::::: 7. Scroll mouse ::::::::: */
+    /* ================================= */
+
+    function mt_scroll_mouse() {
+        $('.mouse a').on("click", function() {
+            $('html, body').animate({
+                scrollTop: $($(this).attr('href')).offset().top
+            }, 500);
+            return false;
+        });
+    }
+
+    /* ================================= */
+    /* ::::::: 8. Flat Shadow :::::::::: */
+    /* ================================= */
+
+    function mt_flat_shadow() {
+        $(".flat-icon").flatshadow({
+            angle: "SE", // Shadows direction. Available options: N, NE, E, SE, S, SW, W and NW. (Angle will be random if left unassigned)
+            fade: true, // Gradient shadow effect
+        });
+    }
+
+});

@@ -1,0 +1,425 @@
+/*
+Theme Name: Woodsman
+Description: Used to style blocks.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 General Block Styles
+2.0 Blocks - Common Blocks
+3.0 Blocks - Formatting
+4.0 Blocks - Layout Elements
+5.0 Blocks - Widgets
+6.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 General Block Styles
+--------------------------------------------------------------*/
+
+/* Captions */
+
+[class^="wp-block-"] figcaption {
+    color: #000;
+    font-family: "Exo", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+    margin-bottom: 0;
+    padding: 0.5em 0;
+}
+
+/* Alignments */
+
+[class^="wp-block-"].alignleft,
+[class^="wp-block-"] .alignleft {
+    margin-right: 1em;
+}
+
+[class^="wp-block-"].alignright,
+[class^="wp-block-"] .alignright {
+    margin-left: 1em;
+}
+
+/*--------------------------------------------------------------
+2.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+    font-size: 5em;
+}
+
+/* Gallery */
+
+.wp-block-gallery {
+    margin-bottom: 1.6em;
+}
+
+/* Audio */
+
+.wp-block-audio audio {
+    display: block;
+    width: 100%;
+}
+
+/* Cover */
+
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover-image h2,
+.wp-block-cover h2 {
+    font-size: 29px;
+    line-height: 1.2069;
+}
+
+/* Quote */
+
+.wp-block-quote,
+.wp-block-quote:not(.is-large):not(.is-style-large),
+[class^="wp-block-"] blockquote {
+    border-left: 4px solid #000;
+    color: #000;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.8182;
+    margin: 0 0 35px 0;
+    padding-left: 17px;
+}
+
+.wp-block-quote cite,
+.wp-block-quote__citation {
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    line-height: 1.6;
+    text-transform: none;
+}
+
+.wp-block-quote em,
+.wp-block-quote i {
+    font-style: normal;
+}
+
+.wp-block-quote strong,
+.wp-block-quote b {
+    font-weight: 400;
+}
+
+/* Cover Image */
+
+.wp-block-cover-image.aligncenter,
+.wp-block-cover.aligncenter,
+.wp-block-cover-image.alignleft,
+.wp-block-cover.alignleft,
+.wp-block-cover-image.alignright,
+.wp-block-cover.alignright {
+    display: flex;
+}
+
+/* File */
+
+.wp-block-file a.wp-block-file__button {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    padding: 11px 22px 10px 22px;
+    display: inline;
+}
+
+.rtl .wp-block-file *+.wp-block-file__button {
+    margin-left: 0.75em;
+    margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+3.0 Blocks - Formatting
+--------------------------------------------------------------*/
+
+/* Code */
+
+.wp-block-code {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.wp-block-code code {
+    font-family: Inconsolata, monospace;
+    font-size: inherit;
+}
+
+/* Preformatted */
+
+.wp-block-preformatted {
+    background-color: rgba(0, 0, 0, 0.01);
+    border: 1px solid #eaeaea;
+    line-height: 1.2;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 0.8em;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Pullquote */
+
+.wp-block-pullquote {
+    border: 0;
+}
+
+.wp-block-pullquote blockquote {
+    border: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.wp-block-pullquote cite {
+    color: #333;
+    font-size: 15px;
+    font-style: normal;
+    line-height: 1.6;
+    text-transform: none;
+}
+
+/* Table */
+
+.wp-block-table th,
+.wp-block-table td {
+    border-color: #000000;
+}
+
+/*--------------------------------------------------------------
+4.0 Blocks - Layout Elements
+--------------------------------------------------------------*/
+
+/* Button */
+
+.wp-block-button .wp-block-button__link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    padding: 11px 22px 10px 22px;
+    display: inline;
+}
+
+.entry-content .wp-block-button:not(.is-style-outline) .wp-block-button__link {
+    border: 0;
+}
+
+.entry-content .wp-block-button.is-style-outline .wp-block-button__link:hover {
+    border-bottom: none;
+}
+
+.wp-block-button__link {
+    background-color: #000;
+    color: #fff;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+    color: #333;
+}
+
+/* Seperators */
+
+.wp-block-separator {
+    border: 0;
+    height: 1px;
+    margin-bottom: 28px;
+    max-width: 100px;
+    background-color: #eaeaea;
+}
+
+.wp-block-separator.is-style-wide {
+    max-width: 100%;
+    border: 0;
+    height: 1px;
+    margin-bottom: 28px;
+    background-color: #eaeaea;
+}
+
+/* Media & Text */
+
+.wp-block-media-text {
+    margin-bottom: 1.6em;
+}
+
+.wp-block-media-text *:last-child {
+    margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+5.0 Blocks - Widgets
+--------------------------------------------------------------*/
+
+/* Archives, Categories & Latest Posts */
+
+.wp-block-archives.aligncenter,
+.wp-block-categories.aligncenter,
+.wp-block-latest-posts.aligncenter {
+    list-style-position: inside;
+    text-align: center;
+}
+
+/* Latest Comments */
+
+.wp-block-latest-comments {
+    margin: 0;
+    padding: 0;
+}
+
+.wp-block-latest-comments footer {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+.wp-block-latest-comments__comment,
+.wp-block-latest-comments__comment-excerpt,
+.wp-block-latest-comments__comment-excerpt p {
+    font-size: 15px;
+}
+
+.wp-block-latest-comments__comment-meta a {
+    border-bottom-color: transparent;
+    font-weight: 700;
+    color: #000;
+}
+
+.wp-block-latest-comments__comment-meta a:hover {
+    color: #000;
+}
+
+.wp-block-latest-comments__comment-excerpt p:last-child {
+    margin-bottom: 0;
+}
+
+.wp-block-latest-comments__comment-date {
+    color: #000000;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 1.6em;
+}
+
+.wp-block-latest-comments .wp-block-latest-comments__comment {
+    border-top: 1px solid #eaeaea;
+    border-top: 1px solid rgba(51, 51, 51, 0.1);
+    margin-bottom: 0;
+    padding: 1.6em 0;
+}
+
+ul.wp-block-categories,
+ul.wp-block-latest-posts,
+ul.wp-block-archives {
+    margin: 0;
+    padding: 0;
+}
+
+/*--------------------------------------------------------------
+6.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+.has-dark-gray-color {
+    color: #111;
+}
+
+.has-dark-gray-background-color {
+    background-color: #111;
+}
+
+.has-light-gray-color {
+    color: #f1f1f1;
+}
+
+.has-light-gray-background-color {
+    background-color: #f1f1f1;
+}
+
+.has-white-color {
+    color: #fff;
+}
+
+.has-white-background-color {
+    background-color: #fff;
+}
+
+.has-yellow-color {
+    color: #f4ca16;
+}
+
+.has-yellow-background-color {
+    background-color: #f4ca16;
+}
+
+.has-dark-brown-color {
+    color: #352712;
+}
+
+.has-dark-brown-background-color {
+    background-color: #352712;
+}
+
+.has-medium-pink-color {
+    color: #e53b51;
+}
+
+.has-medium-pink-background-color {
+    background-color: #e53b51;
+}
+
+.has-light-pink-color {
+    color: #ffe5d1;
+}
+
+.has-light-pink-background-color {
+    background-color: #ffe5d1;
+}
+
+.has-dark-purple-color {
+    color: #2e2256;
+}
+
+.has-dark-purple-background-color {
+    background-color: #2e2256;
+}
+
+.has-purple-color {
+    color: #674970;
+}
+
+.has-purple-background-color {
+    background-color: #674970;
+}
+
+.has-blue-gray-color {
+    color: #22313f;
+}
+
+.has-blue-gray-background-color {
+    background-color: #22313f;
+}
+
+.has-bright-blue-color {
+    color: #55c3dc;
+}
+
+.has-bright-blue-background-color {
+    background-color: #55c3dc;
+}
+
+.has-light-blue-color {
+    color: #e9f2f9;
+}
+
+.has-light-blue-background-color {
+    background-color: #e9f2f9;
+}
